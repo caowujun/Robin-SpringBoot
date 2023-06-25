@@ -1,0 +1,25 @@
+server:
+  port: 5015
+spring:
+  application:
+    name: sky
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    druid:
+      url: jdbc:postgresql://localhost:5432/robin?TimeZone=Asia/Tokyo
+      username: postgres
+      password: IBH3OynbKq8l8mS7ArSaqMf72Jxywn/TbhBoDr/g0QOSPCSxmXW33H89i1UBtQnuEbYOFQvjB/aPOLi+JNsgSQ==
+      filter:
+        config:
+          enabled: true
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIRgR2j58nQfv6lGmY+6DWPpSHSgQu1Ll5mHx+kjwQ/5MdbRxPzoSeV9ilMoePX45l3o0HPtUbAB7ocvjS3/bzsCAwEAAQ==
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    clean-disabled: true
+    encoding: utf-8
+    locations: classpath：db/migration
+    sql-migration-prefix: V
+    sql-migration-separator: __
+    sql-migration-suffixes: .sql

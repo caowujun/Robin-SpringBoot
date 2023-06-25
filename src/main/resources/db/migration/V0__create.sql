@@ -23,23 +23,22 @@ CREATE TABLE robin.article (
                                CONSTRAINT article_pk PRIMARY KEY (id)
 );
 
-
--- robin.battle definition
+-- robin.fire definition
 
 -- Drop table
 
--- DROP TABLE robin.battle;
+-- DROP TABLE robin.fire;
 
-CREATE TABLE robin.battle (
-                              id varchar NOT NULL,
-                              recorddate varchar NOT NULL,
-                              battlenumber varchar NOT NULL,
-                              notes varchar(50) NULL,
-                              createat timestamp NULL DEFAULT now(),
-                              createby varchar(50) NULL,
-                              updateat timestamp NULL DEFAULT now(),
-                              updateby varchar(50) NULL,
-                              CONSTRAINT battle_pk PRIMARY KEY (id)
+CREATE TABLE robin.fire (
+                            id varchar NOT NULL,
+                            recorddate varchar NOT NULL,
+                            firecount varchar NOT NULL,
+                            notes varchar(50) NULL,
+                            createat timestamp NULL DEFAULT now(),
+                            createby varchar(50) NULL,
+                            updateat timestamp NULL DEFAULT now(),
+                            updateby varchar(50) NULL,
+                            CONSTRAINT battle_pk PRIMARY KEY (id)
 );
 
 

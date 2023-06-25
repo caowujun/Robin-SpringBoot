@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.robinspringboot.mapper.LogMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.robinspringboot.domain.Log">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="userdisplayname" column="userdisplayname" jdbcType="VARCHAR"/>
+            <result property="exceptiontype" column="exceptiontype" jdbcType="VARCHAR"/>
+            <result property="exceptionmsg" column="exceptionmsg" jdbcType="VARCHAR"/>
+            <result property="notes" column="notes" jdbcType="VARCHAR"/>
+            <result property="createat" column="createat" jdbcType="TIMESTAMP"/>
+            <result property="createby" column="createby" jdbcType="VARCHAR"/>
+            <result property="updateat" column="updateat" jdbcType="TIMESTAMP"/>
+            <result property="updateby" column="updateby" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userdisplayname,exceptiontype,
+        exceptionmsg,notes,createat,
+        createby,updateat,updateby
+    </sql>
+</mapper>

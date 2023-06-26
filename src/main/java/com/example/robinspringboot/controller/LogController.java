@@ -1,7 +1,7 @@
 package com.example.robinspringboot.controller;
 
-import com.example.robinspringboot.domain.Fire;
-import com.example.robinspringboot.service.FireService;
+import com.example.robinspringboot.domain.Log;
+import com.example.robinspringboot.service.LogService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
@@ -10,30 +10,30 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
 /**
- * (Fire)表控制层
+ * (Log)表控制层
  *
  * @author makejava
  * @since 2023-06-26 13:44:19
  */
 @RestController
-@RequestMapping("fire")
-public class FireController {
+@RequestMapping("log")
+public class LogController {
     /**
      * 服务对象
      */
     @Resource
-    private FireService fireService;
+    private LogService logService;
 
     /**
      * 分页查询
      *
-     * @param fire        筛选条件
+     * @param log         筛选条件
      * @param pageRequest 分页对象
      * @return 查询结果
      */
     @GetMapping
-    public ResponseEntity<Page<Fire>> queryByPage(Fire fire, PageRequest pageRequest) {
-        return ResponseEntity.ok(this.fireService.queryByPage(fire, pageRequest));
+    public ResponseEntity<Page<Log>> queryByPage(Log log, PageRequest pageRequest) {
+        return ResponseEntity.ok(this.logService.queryByPage(log, pageRequest));
     }
 
     /**
@@ -43,30 +43,30 @@ public class FireController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public ResponseEntity<Fire> queryById(@PathVariable("id") String id) {
-        return ResponseEntity.ok(this.fireService.queryById(id));
+    public ResponseEntity<Log> queryById(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.logService.queryById(id));
     }
 
     /**
      * 新增数据
      *
-     * @param fire 实体
+     * @param log 实体
      * @return 新增结果
      */
     @PostMapping
-    public ResponseEntity<Fire> add(Fire fire) {
-        return ResponseEntity.ok(this.fireService.insert(fire));
+    public ResponseEntity<Log> add(Log log) {
+        return ResponseEntity.ok(this.logService.insert(log));
     }
 
     /**
      * 编辑数据
      *
-     * @param fire 实体
+     * @param log 实体
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<Fire> edit(Fire fire) {
-        return ResponseEntity.ok(this.fireService.update(fire));
+    public ResponseEntity<Log> edit(Log log) {
+        return ResponseEntity.ok(this.logService.update(log));
     }
 
     /**
@@ -77,7 +77,7 @@ public class FireController {
      */
     @DeleteMapping
     public ResponseEntity<Boolean> deleteById(String id) {
-        return ResponseEntity.ok(this.fireService.deleteById(id));
+        return ResponseEntity.ok(this.logService.deleteById(id));
     }
 
 }

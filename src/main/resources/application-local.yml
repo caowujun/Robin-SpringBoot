@@ -4,16 +4,15 @@ spring:
   application:
     name: sky
   datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      url: jdbc:postgresql://localhost:5432/robin?TimeZone=Asia/Tokyo
+      url: jdbc:postgresql://47.9314.110:5432/robin
       username: postgres
-      password: IBH3OynbKq8l8mS7ArSaqMf72Jxywn/TbhBoDr/g0QOSPCSxmXW33H89i1UBtQnuEbYOFQvjB/aPOLi+JNsgSQ==
+      password: URagxTk+1ke2i/8UvobwjBDr1Dl/7TbKJdhLLKOWZbFB/5CoMUtAZs9NMIOzKCLaM/Crw61DzK2emcYDZ+30oQ==
       driver-class-name: org.postgresql.Driver
       filter:
         config:
           enabled: true
-      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIRgR2j58nQfv6lGmY+6DWPpSHSgQu1Ll5mHx+kjwQ/5MdbRxPzoSeV9ilMoePX45l3o0HPtUbAB7ocvjS3/bzsCAwEAAQ==
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJRCn6+3S1M64BjElYxz8ILRQljVVc1ywXIS7TwjbrTOgf4vH+yntGVbsCytt2ssZKGC+zlkRggOzMX5jOTukOMCAwEAAQ==
       initial-size: 5
       max-active: 10
       max-wait: 3000

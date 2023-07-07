@@ -1,12 +1,12 @@
 package com.example.robinspringboot.service;
 
-import com.example.robinspringboot.domain.Gasoline;
+import com.example.robinspringboot.entity.Gasoline;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
 * @author P0164442
 * @description 针对表【gasoline】的数据库操作Service
-* @createDate 2023-06-25 16:23:43
+* @createDate 2023-07-07 12:56:04
 */
 public interface GasolineService extends IService<Gasoline> {
 

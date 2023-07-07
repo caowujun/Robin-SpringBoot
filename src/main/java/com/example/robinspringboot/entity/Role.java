@@ -1,4 +1,4 @@
-package com.example.robinspringboot.domain;
+package com.example.robinspringboot.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -10,11 +10,11 @@ import lombok.Data;
 
 /**
  * 
- * @TableName enumConfig
+ * @TableName role
  */
-@TableName(value ="enumConfig")
+@TableName(value ="role")
 @Data
-public class Enumconfig implements Serializable {
+public class Role implements Serializable {
     /**
      * 
      */
@@ -24,22 +24,12 @@ public class Enumconfig implements Serializable {
     /**
      * 
      */
-    private String enumtype;
+    private String rolename;
 
     /**
      * 
      */
-    private String enumname;
-
-    /**
-     * 
-     */
-    private Object enumvalue;
-
-    /**
-     * 
-     */
-    private String enumlanguage;
+    private Object rolevalue;
 
     /**
      * 
@@ -80,12 +70,10 @@ public class Enumconfig implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Enumconfig other = (Enumconfig) that;
+        Role other = (Role) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getEnumtype() == null ? other.getEnumtype() == null : this.getEnumtype().equals(other.getEnumtype()))
-            && (this.getEnumname() == null ? other.getEnumname() == null : this.getEnumname().equals(other.getEnumname()))
-            && (this.getEnumvalue() == null ? other.getEnumvalue() == null : this.getEnumvalue().equals(other.getEnumvalue()))
-            && (this.getEnumlanguage() == null ? other.getEnumlanguage() == null : this.getEnumlanguage().equals(other.getEnumlanguage()))
+            && (this.getRolename() == null ? other.getRolename() == null : this.getRolename().equals(other.getRolename()))
+            && (this.getRolevalue() == null ? other.getRolevalue() == null : this.getRolevalue().equals(other.getRolevalue()))
             && (this.getNotes() == null ? other.getNotes() == null : this.getNotes().equals(other.getNotes()))
             && (this.getCreateat() == null ? other.getCreateat() == null : this.getCreateat().equals(other.getCreateat()))
             && (this.getCreateby() == null ? other.getCreateby() == null : this.getCreateby().equals(other.getCreateby()))
@@ -98,10 +86,8 @@ public class Enumconfig implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getEnumtype() == null) ? 0 : getEnumtype().hashCode());
-        result = prime * result + ((getEnumname() == null) ? 0 : getEnumname().hashCode());
-        result = prime * result + ((getEnumvalue() == null) ? 0 : getEnumvalue().hashCode());
-        result = prime * result + ((getEnumlanguage() == null) ? 0 : getEnumlanguage().hashCode());
+        result = prime * result + ((getRolename() == null) ? 0 : getRolename().hashCode());
+        result = prime * result + ((getRolevalue() == null) ? 0 : getRolevalue().hashCode());
         result = prime * result + ((getNotes() == null) ? 0 : getNotes().hashCode());
         result = prime * result + ((getCreateat() == null) ? 0 : getCreateat().hashCode());
         result = prime * result + ((getCreateby() == null) ? 0 : getCreateby().hashCode());
@@ -117,10 +103,8 @@ public class Enumconfig implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", enumtype=").append(enumtype);
-        sb.append(", enumname=").append(enumname);
-        sb.append(", enumvalue=").append(enumvalue);
-        sb.append(", enumlanguage=").append(enumlanguage);
+        sb.append(", rolename=").append(rolename);
+        sb.append(", rolevalue=").append(rolevalue);
         sb.append(", notes=").append(notes);
         sb.append(", createat=").append(createat);
         sb.append(", createby=").append(createby);

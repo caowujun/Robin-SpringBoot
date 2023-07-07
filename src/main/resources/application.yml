@@ -1,3 +1,14 @@
+server:
+  port: 5015
 spring:
-  profiles:
-    active: local
+  main:
+    allow-bean-definition-overriding: false
+  application:
+    name: sky
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://47.93.14.110:5432/sky
+    username: postgres
+    password: Win2003@
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml

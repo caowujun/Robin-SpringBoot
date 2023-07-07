@@ -1,4 +1,4 @@
-package com.example.robinspringboot.domain;
+package com.example.robinspringboot.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -10,11 +10,11 @@ import lombok.Data;
 
 /**
  * 
- * @TableName article
+ * @TableName enumconfig
  */
-@TableName(value ="article")
+@TableName(value ="enumconfig")
 @Data
-public class Article implements Serializable {
+public class Enumconfig implements Serializable {
     /**
      * 
      */
@@ -24,17 +24,22 @@ public class Article implements Serializable {
     /**
      * 
      */
-    private String articlename;
+    private String enumtype;
 
     /**
      * 
      */
-    private String articleurl;
+    private String enumname;
 
     /**
      * 
      */
-    private String articletype;
+    private Object enumvalue;
+
+    /**
+     * 
+     */
+    private String enumlanguage;
 
     /**
      * 
@@ -75,11 +80,12 @@ public class Article implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Article other = (Article) that;
+        Enumconfig other = (Enumconfig) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getArticlename() == null ? other.getArticlename() == null : this.getArticlename().equals(other.getArticlename()))
-            && (this.getArticleurl() == null ? other.getArticleurl() == null : this.getArticleurl().equals(other.getArticleurl()))
-            && (this.getArticletype() == null ? other.getArticletype() == null : this.getArticletype().equals(other.getArticletype()))
+            && (this.getEnumtype() == null ? other.getEnumtype() == null : this.getEnumtype().equals(other.getEnumtype()))
+            && (this.getEnumname() == null ? other.getEnumname() == null : this.getEnumname().equals(other.getEnumname()))
+            && (this.getEnumvalue() == null ? other.getEnumvalue() == null : this.getEnumvalue().equals(other.getEnumvalue()))
+            && (this.getEnumlanguage() == null ? other.getEnumlanguage() == null : this.getEnumlanguage().equals(other.getEnumlanguage()))
             && (this.getNotes() == null ? other.getNotes() == null : this.getNotes().equals(other.getNotes()))
             && (this.getCreateat() == null ? other.getCreateat() == null : this.getCreateat().equals(other.getCreateat()))
             && (this.getCreateby() == null ? other.getCreateby() == null : this.getCreateby().equals(other.getCreateby()))
@@ -92,9 +98,10 @@ public class Article implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getArticlename() == null) ? 0 : getArticlename().hashCode());
-        result = prime * result + ((getArticleurl() == null) ? 0 : getArticleurl().hashCode());
-        result = prime * result + ((getArticletype() == null) ? 0 : getArticletype().hashCode());
+        result = prime * result + ((getEnumtype() == null) ? 0 : getEnumtype().hashCode());
+        result = prime * result + ((getEnumname() == null) ? 0 : getEnumname().hashCode());
+        result = prime * result + ((getEnumvalue() == null) ? 0 : getEnumvalue().hashCode());
+        result = prime * result + ((getEnumlanguage() == null) ? 0 : getEnumlanguage().hashCode());
         result = prime * result + ((getNotes() == null) ? 0 : getNotes().hashCode());
         result = prime * result + ((getCreateat() == null) ? 0 : getCreateat().hashCode());
         result = prime * result + ((getCreateby() == null) ? 0 : getCreateby().hashCode());
@@ -110,9 +117,10 @@ public class Article implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", articlename=").append(articlename);
-        sb.append(", articleurl=").append(articleurl);
-        sb.append(", articletype=").append(articletype);
+        sb.append(", enumtype=").append(enumtype);
+        sb.append(", enumname=").append(enumname);
+        sb.append(", enumvalue=").append(enumvalue);
+        sb.append(", enumlanguage=").append(enumlanguage);
         sb.append(", notes=").append(notes);
         sb.append(", createat=").append(createat);
         sb.append(", createby=").append(createby);

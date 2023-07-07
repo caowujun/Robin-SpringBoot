@@ -1,19 +1,19 @@
 package com.example.robinspringboot.controller;
 
-import com.example.robinspringboot.domain.Role;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.robinspringboot.entity.Role;
 import com.example.robinspringboot.service.RoleService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 
 /**
  * (Role)表控制层
  *
  * @author makejava
- * @since 2023-06-26 13:44:19
+ * @since 2023-07-07 14:15:53
  */
 @RestController
 @RequestMapping("role")
@@ -27,13 +27,13 @@ public class RoleController {
     /**
      * 分页查询
      *
-     * @param role        筛选条件
-     * @param pageRequest 分页对象
+     * @param page 分页对象
+     * @param role 筛选条件
      * @return 查询结果
      */
     @GetMapping
-    public ResponseEntity<Page<Role>> queryByPage(Role role, PageRequest pageRequest) {
-        return ResponseEntity.ok(this.roleService.queryByPage(role, pageRequest));
+    public ResponseEntity<Page<Role>> page(Page<Role> page, Role role) {
+        return ResponseEntity.ok(this.roleService.page(page, new QueryWrapper<>(role)));
     }
 
     /**
@@ -43,8 +43,8 @@ public class RoleController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public ResponseEntity<Role> queryById(@PathVariable("id") String id) {
-        return ResponseEntity.ok(this.roleService.queryById(id));
+    public ResponseEntity<Role> query(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.roleService.getById(id));
     }
 
     /**
@@ -54,8 +54,8 @@ public class RoleController {
      * @return 新增结果
      */
     @PostMapping
-    public ResponseEntity<Role> add(Role role) {
-        return ResponseEntity.ok(this.roleService.insert(role));
+    public ResponseEntity<Boolean> add(Role role) {
+        return ResponseEntity.ok(this.roleService.save(role));
     }
 
     /**
@@ -65,8 +65,8 @@ public class RoleController {
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<Role> edit(Role role) {
-        return ResponseEntity.ok(this.roleService.update(role));
+    public ResponseEntity<Boolean> edit(Role role) {
+        return ResponseEntity.ok(this.roleService.updateById(role));
     }
 
     /**
@@ -75,9 +75,9 @@ public class RoleController {
      * @param id 主键
      * @return 删除是否成功
      */
-    @DeleteMapping
-    public ResponseEntity<Boolean> deleteById(String id) {
-        return ResponseEntity.ok(this.roleService.deleteById(id));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.roleService.removeById(id));
     }
 
 }

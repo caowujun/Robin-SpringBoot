@@ -1,4 +1,4 @@
-package com.example.robinspringboot.domain;
+package com.example.robinspringboot.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -10,11 +10,11 @@ import lombok.Data;
 
 /**
  * 
- * @TableName money
+ * @TableName battle
  */
-@TableName(value ="money")
+@TableName(value ="battle")
 @Data
-public class Money implements Serializable {
+public class Battle implements Serializable {
     /**
      * 
      */
@@ -24,17 +24,12 @@ public class Money implements Serializable {
     /**
      * 
      */
-    private Integer amount;
+    private String recorddate;
 
     /**
      * 
      */
-    private Date recorddate;
-
-    /**
-     * 
-     */
-    private Object category;
+    private String battlecount;
 
     /**
      * 
@@ -75,11 +70,10 @@ public class Money implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Money other = (Money) that;
+        Battle other = (Battle) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getAmount() == null ? other.getAmount() == null : this.getAmount().equals(other.getAmount()))
             && (this.getRecorddate() == null ? other.getRecorddate() == null : this.getRecorddate().equals(other.getRecorddate()))
-            && (this.getCategory() == null ? other.getCategory() == null : this.getCategory().equals(other.getCategory()))
+            && (this.getBattlecount() == null ? other.getBattlecount() == null : this.getBattlecount().equals(other.getBattlecount()))
             && (this.getNotes() == null ? other.getNotes() == null : this.getNotes().equals(other.getNotes()))
             && (this.getCreateat() == null ? other.getCreateat() == null : this.getCreateat().equals(other.getCreateat()))
             && (this.getCreateby() == null ? other.getCreateby() == null : this.getCreateby().equals(other.getCreateby()))
@@ -92,9 +86,8 @@ public class Money implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getAmount() == null) ? 0 : getAmount().hashCode());
         result = prime * result + ((getRecorddate() == null) ? 0 : getRecorddate().hashCode());
-        result = prime * result + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        result = prime * result + ((getBattlecount() == null) ? 0 : getBattlecount().hashCode());
         result = prime * result + ((getNotes() == null) ? 0 : getNotes().hashCode());
         result = prime * result + ((getCreateat() == null) ? 0 : getCreateat().hashCode());
         result = prime * result + ((getCreateby() == null) ? 0 : getCreateby().hashCode());
@@ -110,9 +103,8 @@ public class Money implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", amount=").append(amount);
         sb.append(", recorddate=").append(recorddate);
-        sb.append(", category=").append(category);
+        sb.append(", battlecount=").append(battlecount);
         sb.append(", notes=").append(notes);
         sb.append(", createat=").append(createat);
         sb.append(", createby=").append(createby);

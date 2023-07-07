@@ -1,14 +1,14 @@
 package com.example.robinspringboot.mapper;
 
-import com.example.robinspringboot.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.robinspringboot.entity.User;
 
 /**
-* @author P0164442
-* @description 针对表【user】的数据库操作Mapper
-* @createDate 2023-06-25 16:23:43
-* @Entity generator.domain.User
-*/
+ * @author P0164442
+ * @description 针对表【user】的数据库操作Mapper
+ * @createDate 2023-07-07 12:56:04
+ * @Entity com.example.robinspringboot.entity.User
+ */
 public interface UserMapper extends BaseMapper<User> {
 
 }

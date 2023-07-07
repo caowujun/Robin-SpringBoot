@@ -1,27 +1,29 @@
-server:
-  port: 5015
-spring:
-  application:
-    name: sky
-  datasource:
-    druid:
-      url: jdbc:postgresql://47.9314.110:5432/robin
-      username: postgres
-      password: URagxTk+1ke2i/8UvobwjBDr1Dl/7TbKJdhLLKOWZbFB/5CoMUtAZs9NMIOzKCLaM/Crw61DzK2emcYDZ+30oQ==
-      driver-class-name: org.postgresql.Driver
-      filter:
-        config:
-          enabled: true
-      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJRCn6+3S1M64BjElYxz8ILRQljVVc1ywXIS7TwjbrTOgf4vH+yntGVbsCytt2ssZKGC+zlkRggOzMX5jOTukOMCAwEAAQ==
-      initial-size: 5
-      max-active: 10
-      max-wait: 3000
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
-    clean-disabled: true
-    encoding: utf-8
-    locations: classpath：db/migration
-    sql-migration-prefix: V
-    sql-migration-separator: __
-    sql-migration-suffixes: .sql
+#server:
+#  port: 5015
+#spring:
+#  application:
+#    name: sky
+#  datasource:
+#    druid:
+#      url: jdbc:postgresql://47.9314.110:5432/robin
+#      username: postgres
+#      password: URagxTk+1ke2i/8UvobwjBDr1Dl/7TbKJdhLLKOWZbFB/5CoMUtAZs9NMIOzKCLaM/Crw61DzK2emcYDZ+30oQ==
+#      driver-class-name: org.postgresql.Driver
+#      filter:
+#        config:
+#          enabled: true
+#      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJRCn6+3S1M64BjElYxz8ILRQljVVc1ywXIS7TwjbrTOgf4vH+yntGVbsCytt2ssZKGC+zlkRggOzMX5jOTukOMCAwEAAQ==
+#      initial-size: 5
+#      max-active: 10
+#      max-wait: 3000
+#  flyway:
+#    enabled: true
+#    baseline-on-migrate: true
+#    clean-disabled: true
+#    encoding: utf-8
+#    locations: classpath：db/migration
+#    sql-migration-prefix: V
+#    sql-migration-separator: __
+#    sql-migration-suffixes: .sql
+#mybatis-plus:
+#  mapper-locations: classpath*:mapper/*.xml

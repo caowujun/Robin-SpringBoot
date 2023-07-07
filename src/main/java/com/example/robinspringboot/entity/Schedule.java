@@ -1,4 +1,4 @@
-package com.example.robinspringboot.domain;
+package com.example.robinspringboot.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -10,11 +10,11 @@ import lombok.Data;
 
 /**
  * 
- * @TableName user
+ * @TableName schedule
  */
-@TableName(value ="user")
+@TableName(value ="schedule")
 @Data
-public class User implements Serializable {
+public class Schedule implements Serializable {
     /**
      * 
      */
@@ -24,42 +24,12 @@ public class User implements Serializable {
     /**
      * 
      */
-    private String username;
+    private Date schedulestartdate;
 
     /**
      * 
      */
-    private String userdisplayname;
-
-    /**
-     * 
-     */
-    private String password;
-
-    /**
-     * 
-     */
-    private Object roletype;
-
-    /**
-     * 
-     */
-    private String citycode;
-
-    /**
-     * 
-     */
-    private String address;
-
-    /**
-     * 
-     */
-    private String email;
-
-    /**
-     * 
-     */
-    private String phone;
+    private Date scheduleenddate;
 
     /**
      * 
@@ -100,16 +70,10 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        Schedule other = (Schedule) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getUserdisplayname() == null ? other.getUserdisplayname() == null : this.getUserdisplayname().equals(other.getUserdisplayname()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getRoletype() == null ? other.getRoletype() == null : this.getRoletype().equals(other.getRoletype()))
-            && (this.getCitycode() == null ? other.getCitycode() == null : this.getCitycode().equals(other.getCitycode()))
-            && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()))
-            && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()))
-            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
+            && (this.getSchedulestartdate() == null ? other.getSchedulestartdate() == null : this.getSchedulestartdate().equals(other.getSchedulestartdate()))
+            && (this.getScheduleenddate() == null ? other.getScheduleenddate() == null : this.getScheduleenddate().equals(other.getScheduleenddate()))
             && (this.getNotes() == null ? other.getNotes() == null : this.getNotes().equals(other.getNotes()))
             && (this.getCreateat() == null ? other.getCreateat() == null : this.getCreateat().equals(other.getCreateat()))
             && (this.getCreateby() == null ? other.getCreateby() == null : this.getCreateby().equals(other.getCreateby()))
@@ -122,14 +86,8 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        result = prime * result + ((getUserdisplayname() == null) ? 0 : getUserdisplayname().hashCode());
-        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getRoletype() == null) ? 0 : getRoletype().hashCode());
-        result = prime * result + ((getCitycode() == null) ? 0 : getCitycode().hashCode());
-        result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
-        result = prime * result + ((getEmail() == null) ? 0 : getEmail().hashCode());
-        result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
+        result = prime * result + ((getSchedulestartdate() == null) ? 0 : getSchedulestartdate().hashCode());
+        result = prime * result + ((getScheduleenddate() == null) ? 0 : getScheduleenddate().hashCode());
         result = prime * result + ((getNotes() == null) ? 0 : getNotes().hashCode());
         result = prime * result + ((getCreateat() == null) ? 0 : getCreateat().hashCode());
         result = prime * result + ((getCreateby() == null) ? 0 : getCreateby().hashCode());
@@ -145,14 +103,8 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", username=").append(username);
-        sb.append(", userdisplayname=").append(userdisplayname);
-        sb.append(", password=").append(password);
-        sb.append(", roletype=").append(roletype);
-        sb.append(", citycode=").append(citycode);
-        sb.append(", address=").append(address);
-        sb.append(", email=").append(email);
-        sb.append(", phone=").append(phone);
+        sb.append(", schedulestartdate=").append(schedulestartdate);
+        sb.append(", scheduleenddate=").append(scheduleenddate);
         sb.append(", notes=").append(notes);
         sb.append(", createat=").append(createat);
         sb.append(", createby=").append(createby);

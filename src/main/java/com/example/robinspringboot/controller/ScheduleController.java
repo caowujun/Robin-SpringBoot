@@ -1,19 +1,19 @@
 package com.example.robinspringboot.controller;
 
-import com.example.robinspringboot.domain.Schedule;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.robinspringboot.entity.Schedule;
 import com.example.robinspringboot.service.ScheduleService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 
 /**
  * (Schedule)表控制层
  *
  * @author makejava
- * @since 2023-06-26 13:44:19
+ * @since 2023-07-07 14:15:53
  */
 @RestController
 @RequestMapping("schedule")
@@ -27,13 +27,13 @@ public class ScheduleController {
     /**
      * 分页查询
      *
-     * @param schedule    筛选条件
-     * @param pageRequest 分页对象
+     * @param page     分页对象
+     * @param schedule 筛选条件
      * @return 查询结果
      */
     @GetMapping
-    public ResponseEntity<Page<Schedule>> queryByPage(Schedule schedule, PageRequest pageRequest) {
-        return ResponseEntity.ok(this.scheduleService.queryByPage(schedule, pageRequest));
+    public ResponseEntity<Page<Schedule>> page(Page<Schedule> page, Schedule schedule) {
+        return ResponseEntity.ok(this.scheduleService.page(page, new QueryWrapper<>(schedule)));
     }
 
     /**
@@ -43,8 +43,8 @@ public class ScheduleController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public ResponseEntity<Schedule> queryById(@PathVariable("id") String id) {
-        return ResponseEntity.ok(this.scheduleService.queryById(id));
+    public ResponseEntity<Schedule> query(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.scheduleService.getById(id));
     }
 
     /**
@@ -54,8 +54,8 @@ public class ScheduleController {
      * @return 新增结果
      */
     @PostMapping
-    public ResponseEntity<Schedule> add(Schedule schedule) {
-        return ResponseEntity.ok(this.scheduleService.insert(schedule));
+    public ResponseEntity<Boolean> add(Schedule schedule) {
+        return ResponseEntity.ok(this.scheduleService.save(schedule));
     }
 
     /**
@@ -65,8 +65,8 @@ public class ScheduleController {
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<Schedule> edit(Schedule schedule) {
-        return ResponseEntity.ok(this.scheduleService.update(schedule));
+    public ResponseEntity<Boolean> edit(Schedule schedule) {
+        return ResponseEntity.ok(this.scheduleService.updateById(schedule));
     }
 
     /**
@@ -75,9 +75,9 @@ public class ScheduleController {
      * @param id 主键
      * @return 删除是否成功
      */
-    @DeleteMapping
-    public ResponseEntity<Boolean> deleteById(String id) {
-        return ResponseEntity.ok(this.scheduleService.deleteById(id));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.scheduleService.removeById(id));
     }
 
 }

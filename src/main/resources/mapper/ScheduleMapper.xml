@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.robinspringboot.mapper.ScheduleMapper">
 
-    <resultMap id="BaseResultMap" type="com.example.robinspringboot.domain.Schedule">
+    <resultMap id="BaseResultMap" type="com.example.robinspringboot.entity.Schedule">
             <id property="id" column="id" jdbcType="VARCHAR"/>
             <result property="schedulestartdate" column="schedulestartdate" jdbcType="TIMESTAMP"/>
             <result property="scheduleenddate" column="scheduleenddate" jdbcType="TIMESTAMP"/>

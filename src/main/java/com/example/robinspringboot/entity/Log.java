@@ -1,4 +1,4 @@
-package com.example.robinspringboot.domain;
+package com.example.robinspringboot.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

@@ -2,38 +2,38 @@ package com.example.robinspringboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.robinspringboot.entity.Gasoline;
-import com.example.robinspringboot.service.GasolineService;
+import com.example.robinspringboot.entity.Battle;
+import com.example.robinspringboot.service.BattleService;
 import jakarta.annotation.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 /**
- * (Gasoline)表控制层
+ * (Battle)表控制层
  *
  * @author makejava
  * @since 2023-07-07 14:15:53
  */
 @RestController
-@RequestMapping("gasoline")
-public class GasolineController {
+@RequestMapping("battle")
+public class BattleController {
     /**
      * 服务对象
      */
     @Resource
-    private GasolineService gasolineService;
+    private BattleService battleService;
 
     /**
      * 分页查询
      *
-     * @param page     分页对象
-     * @param gasoline 筛选条件
+     * @param page   分页对象
+     * @param battle 筛选条件
      * @return 查询结果
      */
     @GetMapping
-    public ResponseEntity<Page<Gasoline>> page(Page<Gasoline> page, Gasoline gasoline) {
-        return ResponseEntity.ok(this.gasolineService.page(page, new QueryWrapper<>(gasoline)));
+    public ResponseEntity<Page<Battle>> page(Page<Battle> page, Battle battle) {
+        return ResponseEntity.ok(this.battleService.page(page, new QueryWrapper<>(battle)));
     }
 
     /**
@@ -43,30 +43,30 @@ public class GasolineController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public ResponseEntity<Gasoline> query(@PathVariable("id") String id) {
-        return ResponseEntity.ok(this.gasolineService.getById(id));
+    public ResponseEntity<Battle> query(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.battleService.getById(id));
     }
 
     /**
      * 新增数据
      *
-     * @param gasoline 实体
+     * @param battle 实体
      * @return 新增结果
      */
     @PostMapping
-    public ResponseEntity<Boolean> add(Gasoline gasoline) {
-        return ResponseEntity.ok(this.gasolineService.save(gasoline));
+    public ResponseEntity<Boolean> add(Battle battle) {
+        return ResponseEntity.ok(this.battleService.save(battle));
     }
 
     /**
      * 编辑数据
      *
-     * @param gasoline 实体
+     * @param battle 实体
      * @return 编辑结果
      */
     @PutMapping
-    public ResponseEntity<Boolean> edit(Gasoline gasoline) {
-        return ResponseEntity.ok(this.gasolineService.updateById(gasoline));
+    public ResponseEntity<Boolean> edit(Battle battle) {
+        return ResponseEntity.ok(this.battleService.updateById(battle));
     }
 
     /**
@@ -77,7 +77,7 @@ public class GasolineController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") String id) {
-        return ResponseEntity.ok(this.gasolineService.removeById(id));
+        return ResponseEntity.ok(this.battleService.removeById(id));
     }
 
 }

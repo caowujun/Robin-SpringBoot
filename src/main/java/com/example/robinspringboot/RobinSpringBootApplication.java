@@ -1,13 +1,14 @@
 package com.example.robinspringboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * @author P0164442
  */
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication
+@MapperScan("com.example.robinspringboot.mapper")
 public class RobinSpringBootApplication {
 
     public static void main(String[] args) {
